@@ -14,6 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * 
  */
 class Bug
+
 {
     const STATUS_OPEN = "OPEN";
     const STATUS_CLOSE = "COLOSE";
