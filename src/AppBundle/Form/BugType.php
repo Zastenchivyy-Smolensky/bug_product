@@ -13,10 +13,6 @@ use AppBundle\Entity\Bug;
 
 class BugType extends AbstractType
 {
-    /**
-     * @param FormBuilderInterface $builder
-     * @param array $options
-     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         if ($builder->getData()->getId() !== null) {

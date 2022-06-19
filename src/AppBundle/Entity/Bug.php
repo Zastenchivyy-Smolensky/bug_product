@@ -17,7 +17,7 @@ class Bug
 
 {
     const STATUS_OPEN = "OPEN";
-    const STATUS_CLOSE = "COLOSE";
+    const STATUS_CLOSE = "CLOSE";
     const STATUSES = [self::STATUS_OPEN, self::STATUS_CLOSE];
     /**
      * @var int

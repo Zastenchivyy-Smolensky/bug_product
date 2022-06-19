@@ -16,6 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Product
 {
+    
     /**
      * @var int
      *
@@ -48,6 +49,10 @@ class Product
     public function setName($name)
     {
         $this->name = $name;
+    }
+    public function __toString()
+    {
+        return $this->getName();
     }
 }
 
