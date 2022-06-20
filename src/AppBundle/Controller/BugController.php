@@ -27,21 +27,15 @@ class BugController extends Controller
         $dql = "SELECT b, e, r FROM AppBundle:Bug b " .
                "JOIN b.engineer e JOIN b.reporter r " .
                "ORDER BY b.created DESC";
-        /** @var Query $query */
         $query = $this->getDoctrine()->getManager()->createQuery($dql);
 
         $paginator = $this->get('knp_paginator');        
-        /** @var SlidingPagination $pagination */
         $pagination = $paginator->paginate(
             $query,
-            $request->query->getInt('page', 1), // page number
-            5  // limit per page
+            $request->query->getInt('page', 1),
+            5 
         );
-        // 上記 paginate()は内部で以下の２行と同様の処理を行い結果を返します。
-        // $query->setMaxResults(5);
-        // $bugs = $query->getResult();
 
-        // デバッグコード（ハイドレーションの確認）
         dump($query->getHydrationMode());
         dump($pagination->getItems());
         
